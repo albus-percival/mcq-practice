@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiple Choice Question - Practice</title>
+<link rel="stylesheet" href="index.css" />
+
+</head>
+<body>
+
+<div class="page hidden" data-page="setup">
+	<form id="setup">
+		<label for="qCount">How many questions are there?</label>
+		<input type="number" id="qCount" value="5" min="1" step="1" required />
+		<button type="submit">Start</button>
+	</form>
+</div>
+<div class="page hidden" id="questions" data-page="questions">
+	<template>
+		<tr>
+			<th></th>
+			<td><label><input type="radio" name="q1" value="A" /></label></td>
+			<td><label><input type="radio" name="q1" value="B" /></label></td>
+			<td><label><input type="radio" name="q1" value="C" /></label></td>
+			<td><label><input type="radio" name="q1" value="D" /></label></td>
+			<td><button type="button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M5.1 8.2v7l.3 4.2A3 3 0 0 0 8.2 22h7.6c1.4 0 2.7-1.1 2.8-2.6l.3-4.3v-7zM19.2 5h-2.6l-.8-1.5Q15 2.1 13.3 2H11Q9.3 2 8.4 3.5l-1 1.6H4.8q-.7.1-.8.8.1.7.8.8h14.4q.7 0 .8-.8-.1-.8-.8-.8m-10 0 .4-.7q.4-.8 1.2-.8h2.4q.8 0 1.2.8l.5.8z"/></svg></button></td>
+		</tr>
+	</template>
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Opt. A</th>
+				<th>Opt. B</th>
+				<th>Opt. C</th>
+				<th>Opt. D</th>
+				<th>Clear</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Questions will be dynamically added here -->
+		</tbody>
+	</table>
+	<button>Submit</button>
+	<span id="timer">{{timer}}</span>
+</div>
+<div class="page hidden" id="answers" data-page="answers">
+	<template>
+		<tr>
+			<th>00</th>
+			<td>---</td>
+			<td><label><input type="checkbox"></label></td>
+		</tr>
+	</template>
+	<header>Your Answers</header>
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Your Answer</th>
+				<th>Correct?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Answers will be dynamically added here -->
+		</tbody>
+	</table>
+	<div>
+		<div><strong>Time Taken:</strong> &nbsp; {{timeTaken}}</div>
+		<div><strong>Correct:</strong> &nbsp; {{correct}}</div>
+		<div><strong>Wrong:</strong> &nbsp; {{wrong}}</div>
+		<div><strong>No Answer:</strong> &nbsp; {{noAnswer}}</div>
+	</div>
+	<button>Restart</button>
+</div>
+
+<script type="module" src="index.js"></script>
+
+</body>
+</html>
