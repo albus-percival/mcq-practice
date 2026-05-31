@@ -84,6 +84,7 @@ tbody {
 	display: grid;
 	place-items: center;
 	gap: 1rem;
+	padding-bottom: 3rem;
 }
 #setup {
 	display: flex;
